@@ -8,7 +8,8 @@ provisioner: ebs.csi.aws.com
 parameters:
   type: gp2
   fsType: ext4
-volumeBindingMode: WaitForFirstConsumer
+volumeBindingMode: Immediate
 allowVolumeExpansion: true
+reclaimPolicy: Delete
 YAML
 }
