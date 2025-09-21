@@ -1,6 +1,6 @@
 resource "kubectl_manifest" "db_secrets" {
-    depends_on = [kubectl_manifest.db_namespace]
-    yaml_body = <<YAML
+  depends_on = [kubectl_manifest.db_namespace]
+  yaml_body  = <<YAML
 apiVersion: v1
 kind: Secret
 metadata:

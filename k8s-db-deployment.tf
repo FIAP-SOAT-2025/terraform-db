@@ -1,6 +1,6 @@
 resource "kubectl_manifest" "db_deployment" {
-    depends_on = [kubectl_manifest.db_secrets, kubectl_manifest.db_namespace]
-    yaml_body = <<YAML
+  depends_on = [kubectl_manifest.db_secrets, kubectl_manifest.db_namespace]
+  yaml_body  = <<YAML
 apiVersion: apps/v1
 kind: Deployment
 metadata:
