@@ -18,8 +18,9 @@ jobs:
     if: github.event.inputs.action == 'deploy'
     runs-on: ubuntu-latest
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       TF_VAR_db_user: ${{ secrets.DB_USER }}
       TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
       TF_VAR_db_name: ${{ secrets.DB_NAME }}
@@ -52,8 +53,9 @@ jobs:
     if: github.event.inputs.action == 'destroy'
     runs-on: ubuntu-latest
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       TF_VAR_db_user: ${{ secrets.DB_USER }}
       TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
       TF_VAR_db_name: ${{ secrets.DB_NAME }}
