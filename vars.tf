@@ -1,6 +1,6 @@
 variable "projectName" {
   description = "The name of the project"
-  default     = "tc3-g38-lanchonete"
+  default     = "tc3-g38-lanchonete-v1"
 }
 
 variable "db_user" {

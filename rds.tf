@@ -1,14 +1,14 @@
 resource "aws_db_subnet_group" "db_subnet_group" {
-  name       = "${var.projectName}-db-subnet-group"
+  name       = "${var.projectName}-db-subnet-group-v1"
   subnet_ids = data.terraform_remote_state.infra.outputs.private_subnet_ids
 
   tags = {
-    Name = "${var.projectName}-db-subnet-group"
+    Name = "${var.projectName}-db-subnet-group-v1"
   }
 }
 
 resource "aws_security_group" "rds_sg" {
-  name        = "${var.projectName}-rds-sg"
+  name        = "${var.projectName}-rds-sg-v1"
   description = "Allow traffic from the application security group to the PostgreSQL port."
   vpc_id      = data.terraform_remote_state.infra.outputs.vpc_id
 
@@ -35,7 +35,7 @@ resource "aws_security_group" "rds_sg" {
 }
 
 resource "aws_db_instance" "db_instance" {
-  identifier             = "${var.projectName}-postgres-db"
+  identifier             = "${var.projectName}-postgres-db-v1"
   engine                 = "postgres"
   engine_version         = "15"
   instance_class         = "db.t3.micro"
@@ -52,6 +52,6 @@ resource "aws_db_instance" "db_instance" {
   deletion_protection    = false
 
   tags = {
-    Name = "${var.projectName}-postgres-db"
+    Name = "${var.projectName}-postgres-db-v1"
   }
 }
