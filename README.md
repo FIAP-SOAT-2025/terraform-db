@@ -1,4 +1,4 @@
-# Terraforma V1 - DB
+# Terraform - DB
 
 Este projeto do Terraform é responsável por provisionar um banco de dados PostgreSQL na AWS usando o serviço RDS (Relational Database Service).
 
